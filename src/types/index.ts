@@ -7,7 +7,6 @@ export interface FactRequest {
 export interface FactResponse {
   title: string;
   description: string;
-  imageUrl: string;
   date: string;
 }
 

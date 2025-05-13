@@ -59,7 +59,6 @@ function App() {
       const mockResponse: FactResponse = {
         title: `${request.category} - ${request.country}`,
         description: generatedText,
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Proclamation_of_Czechoslovak_Independence_in_1918.jpg/1200px-Proclamation_of_Czechoslovak_Independence_in_1918.jpg',
         date: new Date().toLocaleDateString('cs-CZ')
       };
 
@@ -75,7 +74,19 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App">
+      <div
+        className="App"
+        style={{
+          minHeight: '100vh',
+          width: '100vw',
+          background: 'linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          paddingTop: 40,
+        }}
+      >
         <FactForm onSubmit={handleSubmit} isLoading={isLoading} />
         {fact && <FactResult fact={fact} />}
       </div>
